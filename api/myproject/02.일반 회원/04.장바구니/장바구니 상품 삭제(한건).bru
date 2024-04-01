@@ -1,0 +1,15 @@
+meta {
+  name: 장바구니 상품 삭제(한건)
+  type: http
+  seq: 10
+}
+
+delete {
+  url: {{url}}/carts/5
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}

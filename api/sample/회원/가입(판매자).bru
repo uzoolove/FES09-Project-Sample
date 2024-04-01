@@ -1,0 +1,22 @@
+meta {
+  name: 가입(판매자)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/users
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "gd-seller@market.com",
+    "password": "11111111",
+    "name": "판매자1",
+    "type": "seller",
+    "phone": "01011112222",
+    "address": "서울시 강남구 역삼동 123"
+  }
+}

@@ -1,0 +1,25 @@
+meta {
+  name: 가입
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/users
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "gd2@market.com",
+    "password": "11111111",
+    "name": "스웨거",
+    "type": "user",
+    "phone": "01011112222",
+    "address": "서울시 강남구 역삼동 123",
+    "extra": {
+      "hello": "world"
+    }
+  }
+}

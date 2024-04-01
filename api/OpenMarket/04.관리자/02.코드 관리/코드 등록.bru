@@ -1,0 +1,38 @@
+meta {
+  name: 코드 등록
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/admin/codes
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+      "_id": "suggestTea",
+      "title": "상황별 추천 차",
+      "codes": [
+          {
+              "sort": 2,
+              "code": "ST01",
+              "value": "울적할때"
+          }, {
+              "sort": 3,
+              "code": "ST02",
+              "value": "비오는날"
+          }, {
+              "sort": 1,
+              "code": "ST03",
+              "value": "집중할때"
+          }
+      ]
+  }
+  
+}

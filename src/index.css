@@ -4,12 +4,12 @@
 
 @layer components {
   .btn {
-    @apply bg-gray-500 text-white font-semibold px-2 py-1 ml-2 text-base hover:bg-blue-600 rounded
+    @apply bg-gray-500 text-white font-semibold px-2 py-1 ml-2 text-base hover:bg-blue-600 rounded;
   }
   .btn-primary {
-    @apply bg-blue-500 hover:bg-blue-600
+    @apply bg-blue-500 hover:bg-blue-600;
   }
   .btn-warn {
-    @apply bg-red-500 hover:bg-red-600
+    @apply bg-red-500 hover:bg-red-600;
   }
 }

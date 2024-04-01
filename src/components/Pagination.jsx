@@ -6,25 +6,25 @@ Pagination.propTypes = {
   current: PropTypes.number,
 };
 
-function Pagination({ totalPage, current=1 }){
+function Pagination({ totalPage, current = 1 }) {
   const [searchParams] = useSearchParams();
   const pageList = [];
 
-  for(let page=1; page<=totalPage; page++){
+  for (let page = 1; page <= totalPage; page++) {
     searchParams.set('page', page);
     let search = searchParams.toString();
-    pageList.push((
-      <li key={ page } className={ current===page ? 'text-bold text-blue-700' : '' }>
-        <Link className="hover:text-blue-700" to={ `/boards?${ search }` }>{ page }</Link>
-      </li>
-    ));
+    pageList.push(
+      <li key={page} className={current === page ? 'text-bold text-blue-700' : ''}>
+        <Link className="hover:text-blue-700" to={`/boards?${search}`}>
+          {page}
+        </Link>
+      </li>,
+    );
   }
 
   return (
     <div>
-      <ul className="flex justify-center gap-3 m-4">
-        { pageList }
-      </ul>
+      <ul className="flex justify-center gap-3 m-4">{pageList}</ul>
     </div>
   );
 }

@@ -10,40 +10,22 @@ function getTime(day = 0, second = 0) {
 export const initData = async (nextSeq) => {
   return {
     // 회원
-    user: [
-
-    ],
+    user: [],
     // 상품
-    product: [
-      
-    ],
+    product: [],
     // 주문
-    order: [
-      
-    ],
+    order: [],
     // 후기
-    reply: [
-      
-    ],
+    reply: [],
     // 장바구니
-    cart: [
-      
-    ],
+    cart: [],
     // 즐겨찾기/북마크
-    bookmark: [
-      
-    ],
+    bookmark: [],
     // QnA, 공지사항, 게시판
-    post: [
-      
-    ],
+    post: [],
     // 코드
-    code: [
-      
-    ],
+    code: [],
     // 설정
-    config: [
-      
-    ],
-  }
+    config: [],
+  };
 };

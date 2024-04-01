@@ -8,10 +8,10 @@ Button.propTypes = {
   type: PropTypes.string,
 };
 
-function Button({ children, type="button", bgColor='blue', size='md', className, ...rest }){
+function Button({ children, type = 'button', bgColor = 'blue', size = 'md', className, ...rest }) {
   let btnColor = {
     gray: 'bg-gray-500 dark:bg-gray-700 hover:bg-gray-600',
-    blue: 'bg-blue-500 dark:bg-blue-800 hover:bg-blue-600' ,
+    blue: 'bg-blue-500 dark:bg-blue-800 hover:bg-blue-600',
     red: 'bg-red-500 dark:bg-red-800 hover:bg-red-600 ',
   };
   let btnSize = {
@@ -20,7 +20,11 @@ function Button({ children, type="button", bgColor='blue', size='md', className,
     lg: 'py-2 px-6 text-lg',
   };
 
-  return <button type={ type } className={`text-white dark:text-gray-200 font-semibold ml-2 text-base rounded ${ btnColor[bgColor] } ${ btnSize[size] } ${ className }`} { ...rest }>{ children }</button>
+  return (
+    <button type={type} className={`text-white dark:text-gray-200 font-semibold ml-2 text-base rounded ${btnColor[bgColor]} ${btnSize[size]} ${className}`} {...rest}>
+      {children}
+    </button>
+  );
 }
 
 export default Button;

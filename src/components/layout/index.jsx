@@ -1,8 +1,8 @@
-import Footer from "@components/layout/Footer";
-import Header from "@components/layout/Header";
-import { Outlet } from "react-router-dom";
+import Footer from '@components/layout/Footer';
+import Header from '@components/layout/Header';
+import { Outlet } from 'react-router-dom';
 
-function Layout(){
+function Layout() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />

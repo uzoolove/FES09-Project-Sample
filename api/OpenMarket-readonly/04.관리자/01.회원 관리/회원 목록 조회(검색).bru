@@ -5,7 +5,7 @@ meta {
 }
 
 get {
-  url: {{url}}/admin/users?_id=4&email=u1@market.com&name=데이지&phone=01044445555&type=user&address=강남&custom={"extra.membershipClass":"MC02"}
+  url: {{url}}/admin/users?_id=4&email=u1@market.com&name=데이지&phone=01044445555&type=user&address=강남&custom={"extra.birthday":"11-30"}
   body: none
   auth: bearer
 }
@@ -17,7 +17,8 @@ query {
   phone: 01044445555
   type: user
   address: 강남
-  custom: {"extra.membershipClass":"MC02"}
+  custom: {"extra.birthday":"11-30"}
+  ~custom: {"extra.membershipClass":"MC02"}
 }
 
 auth:bearer {

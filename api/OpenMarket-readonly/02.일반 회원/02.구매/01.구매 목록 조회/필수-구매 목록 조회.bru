@@ -5,9 +5,15 @@ meta {
 }
 
 get {
-  url: {{url}}/orders
+  url: {{url}}/orders?sort={"cost.total": -1}
   body: none
   auth: bearer
+}
+
+query {
+  sort: {"cost.total": -1}
+  ~custom: {"cost.total":{"$gte":40000}}
+  ~keyword: 레고 클래식
 }
 
 auth:bearer {

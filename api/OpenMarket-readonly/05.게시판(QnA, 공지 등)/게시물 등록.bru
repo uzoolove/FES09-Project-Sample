@@ -1,7 +1,7 @@
 meta {
   name: 게시물 등록
   type: http
-  seq: 8
+  seq: 1
 }
 
 post {
@@ -16,9 +16,9 @@ auth:bearer {
 
 body:json {
   {
-      "type": "qna",
-      "product_id": 1,
-      "title": "배송은 얼마나 걸려요?",
-      "content": "주말에 여행가기 전까지 오면 좋겠네요."
+      "type": "community",
+      "title": "여행 후기 입니다.",
+      "content": "주말에 다녀온 여행지 입니다. 날씨가 맑아서 좋았어요.",
+      "image": "/files/00-sample/sample-bugatti.png"
   }
 }

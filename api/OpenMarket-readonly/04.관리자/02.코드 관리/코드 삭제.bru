@@ -1,41 +1,15 @@
 meta {
   name: 코드 삭제
   type: http
-  seq: 3
+  seq: 4
 }
 
 delete {
-  url: {{url}}/admin/codes/suggestTea
+  url: {{url}}/admin/codes/tripTheme
   body: json
   auth: bearer
 }
 
 auth:bearer {
   token: {{accessToken}}
-}
-
-body:json {
-  {
-      "title": "회원 등급",
-      "codes": [
-          {
-              "sort": 1,
-              "code": "UL01",
-              "value": "일반"
-          }, {
-              "sort": 2,
-              "code": "UL02",
-              "value": "프리미엄"
-          }, {
-              "sort": 4,
-              "code": "UL03",
-              "value": "VIP"
-          }, {
-              "sort": 3,
-              "code": "UL04",
-              "value": "VVIP"
-          }
-      ]
-  }
-  
 }

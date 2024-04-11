@@ -1,7 +1,7 @@
 meta {
-  name: 코드 등록
+  name: 코드 등록(tripTheme)
   type: http
-  seq: 1
+  seq: 2
 }
 
 post {
@@ -16,21 +16,21 @@ auth:bearer {
 
 body:json {
   {
-      "_id": "joinState",
-      "title": "신청 승인 여부",
+      "_id": "tripTheme",
+      "title": "여행지 주제",
       "codes": [
           {
               "sort": 2,
-              "code": "JS01",
-              "value": "보류"
+              "code": "TT01",
+              "value": "맛집탐방"
           }, {
               "sort": 3,
-              "code": "JS02",
-              "value": "거부"
+              "code": "TT02",
+              "value": "이색체험"
           }, {
               "sort": 1,
-              "code": "JS03",
-              "value": "승인"
+              "code": "TT03",
+              "value": "음주가무"
           }
       ]
   }

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import Button from '@components/Button';
 import Theme from '@components/Theme';
+import ReactLogoImg from '@assets/react.svg';
 
 function Header() {
   const navigate = useNavigate();
@@ -20,7 +21,8 @@ function Header() {
       <nav className="flex flex-wrap justify-center items-center p-4 md:flex-nowrap md:justify-between">
         <div className="w-1/2 order-1 md:w-auto">
           <a className="flex items-center gap-2" href="/">
-            {/* <img className="mr-3 h-6 sm:h-9" src="/vite.svg" alt="로고 이미지" /> */}
+            <img className="mr-3 h-6 sm:h-9" src="/vite.svg" alt="Vite 로고 이미지" />
+            <img className="mr-3 h-6 sm:h-9" src={ ReactLogoImg } alt="React 로고 이미지" />
             <svg width="32" height="28" viewBox="0 0 2194 1954" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 className="text-sky-700 dark:text-sky-200"

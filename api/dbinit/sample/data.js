@@ -135,9 +135,9 @@ export const initData = async (nextSeq) => {
         buyQuantity: 310,
         mainImages: [
           {
-            url: `/files/sample-dog.jpg`,
-            fileName: 'sample-dog.jpg',
-            orgName: '스턴트 독.jpg',
+            path : `/files/00-sample/sample-dog.jpg`,
+            name : 'sample-dog.jpg',
+            originalname: '스턴트 독.jpg',
           },
         ],
         content: `
@@ -165,9 +165,9 @@ export const initData = async (nextSeq) => {
         buyQuantity: 198,
         mainImages: [
           {
-            url: `/files/sample-diver.jpg`,
-            fileName: 'sample-diver.jpg',
-            orgName: '헬로카봇.jpg',
+            path : `/files/00-sample/sample-diver.jpg`,
+            name : 'sample-diver.jpg',
+            originalname: '헬로카봇.jpg',
           },
         ],
         content: `
@@ -195,9 +195,9 @@ export const initData = async (nextSeq) => {
         buyQuantity: 99,
         mainImages: [
           {
-            url: `/files/sample-classic.jpg`,
-            fileName: 'sample-classic.jpg',
-            orgName: '레고 클래식.jpg',
+            path : `/files/00-sample/sample-classic.jpg`,
+            name : 'sample-classic.jpg',
+            originalname: '레고 클래식.jpg',
           },
         ],
         content: `
@@ -225,9 +225,9 @@ export const initData = async (nextSeq) => {
         buyQuantity: 89,
         mainImages: [
           {
-            url: `/files/sample-bugatti.png`,
-            fileName: 'sample-bugatti.png',
-            orgName: '부가티.png',
+            path : `/files/00-sample/sample-bugatti.png`,
+            name : 'sample-bugatti.png',
+            originalname: '부가티.png',
           },
         ],
         content: `
@@ -255,9 +255,9 @@ export const initData = async (nextSeq) => {
         buyQuantity: 98,
         mainImages: [
           {
-            url: `/files/sample-minecraft.png`,
-            fileName: 'sample-minecraft.png',
-            orgName: '마인크래프트.png',
+            path : `/files/00-sample/sample-minecraft.png`,
+            name : 'sample-minecraft.png',
+            originalname: '마인크래프트.png',
           },
         ],
         content: `
@@ -286,9 +286,9 @@ export const initData = async (nextSeq) => {
         buyQuantity: 99,
         mainImages: [
           {
-            url: `/files/sample-hulk.png`,
-            fileName: 'sample-hulk.png',
-            orgName: '헐크.png',
+            path : `/files/00-sample/sample-hulk.png`,
+            name : 'sample-hulk.png',
+            originalname: '헐크.png',
           },
         ],
         content: `
@@ -316,9 +316,9 @@ export const initData = async (nextSeq) => {
         buyQuantity: 98,
         mainImages: [
           {
-            url: `/files/sample-halligalli.jpg`,
-            fileName: 'sample-halligalli.jpg',
-            orgName: '할리갈리.jpg',
+            path : `/files/00-sample/sample-halligalli.jpg`,
+            name : 'sample-halligalli.jpg',
+            originalname: '할리갈리.jpg',
           },
         ],
         content: `
@@ -346,9 +346,9 @@ export const initData = async (nextSeq) => {
         buyQuantity: 97,
         mainImages: [
           {
-            url: `/files/sample-rummikub.png`,
-            fileName: 'sample-rummikub.png',
-            orgName: '루미큐브.png',
+            path : `/files/00-sample/sample-rummikub.png`,
+            name : 'sample-rummikub.png',
+            originalname: '루미큐브.png',
           },
         ],
         content: `
@@ -376,9 +376,9 @@ export const initData = async (nextSeq) => {
         buyQuantity: 96,
         mainImages: [
           {
-            url: `/files/sample-jjangu.jpg`,
-            fileName: 'sample-jjangu.jpg',
-            orgName: '짱구.jpg',
+            path : `/files/00-sample/sample-jjangu.jpg`,
+            name : 'sample-jjangu.jpg',
+            originalname: '짱구.jpg',
           },
         ],
         content: `
@@ -407,9 +407,9 @@ export const initData = async (nextSeq) => {
         buyQuantity: 95,
         mainImages: [
           {
-            url: `/files/sample-rapunzel.jpg`,
-            fileName: 'sample-rapunzel.jpg',
-            orgName: '라푼젤.jpg',
+            path : `/files/00-sample/sample-rapunzel.jpg`,
+            name : 'sample-rapunzel.jpg',
+            originalname: '라푼젤.jpg',
           },
         ],
         content: `
@@ -437,23 +437,23 @@ export const initData = async (nextSeq) => {
         buyQuantity: 94,
         mainImages: [
           {
-            url: `/files/sample-skibidi01.jpg`,
-            fileName: 'sample-skibidi01.jpg',
-            orgName: '피규어1.jpg',
+            path : `/files/00-sample/sample-skibidi01.jpg`,
+            name : 'sample-skibidi01.jpg',
+            originalname: '피규어1.jpg',
           },
           {
-            url: `/files/sample-skibidi02.jpg`,
-            fileName: 'sample-skibidi02.jpg',
-            orgName: '피규어2.jpg',
+            path : `/files/00-sample/sample-skibidi02.jpg`,
+            name : 'sample-skibidi02.jpg',
+            originalname: '피규어2.jpg',
           },
         ],
         content: `
           <div align="center"><p>*크리스마스 배송 안내</p></div>
           <div align="center"><p>택배사 물량 증가로 평소보다 2~3일 더 걸립니다.</p></div>
           <div align="center"><br></div>
-          <div align="center"><img src="${process.env.API_HOST}/api/files/sample-skibidi03.jpg"></div>
+          <div align="center"><img src="${process.env.API_HOST}/api/files/00-sample/sample-skibidi03.jpg"></div>
           <div align="center"><br></div>
-          <div align="center"><img src="${process.env.API_HOST}/api/files/sample-skibidi04.jpg"></div>
+          <div align="center"><img src="${process.env.API_HOST}/api/files/00-sample/sample-skibidi04.jpg"></div>
           <div align="center"><br></div>
           <div align="center"><p>*반품 안내</p></div>`,
         createdAt: getTime(-16, -60 * 60 * 3),
@@ -478,19 +478,19 @@ export const initData = async (nextSeq) => {
         buyQuantity: 800,
         mainImages: [
           {
-            url: `/files/sample-skibidi11.jpg`,
-            fileName: 'sample-skibidi11.jpg',
-            orgName: '토일렛.jpg',
+            path : `/files/00-sample/sample-skibidi11.jpg`,
+            name : 'sample-skibidi11.jpg',
+            originalname: '토일렛.jpg',
           },
         ],
         content: `
-          <div align="center"><img src="${process.env.API_HOST}/api/files/sample-skibidi12.jpg"></div>
+          <div align="center"><img src="${process.env.API_HOST}/api/files/00-sample/sample-skibidi12.jpg"></div>
           <div align="center"><br></div>
-          <div align="center"><img src="${process.env.API_HOST}/api/files/sample-skibidi13.jpg"></div>
+          <div align="center"><img src="${process.env.API_HOST}/api/files/00-sample/sample-skibidi13.jpg"></div>
           <div align="center"><br></div>
-          <div align="center"><img src="${process.env.API_HOST}/api/files/sample-skibidi14.jpg"></div>
+          <div align="center"><img src="${process.env.API_HOST}/api/files/00-sample/sample-skibidi14.jpg"></div>
           <div align="center"><br></div>
-          <div align="center"><img src="${process.env.API_HOST}/api/files/sample-skibidi15.jpg"></div>`,
+          <div align="center"><img src="${process.env.API_HOST}/api/files/00-sample/sample-skibidi15.jpg"></div>`,
         createdAt: getTime(-11, -60 * 60 * 12),
         updatedAt: getTime(-5, -60 * 60 * 6),
         extra: {
@@ -513,17 +513,17 @@ export const initData = async (nextSeq) => {
         buyQuantity: 94,
         mainImages: [
           {
-            url: `/files/sample-skibidi21.jpg`,
-            fileName: 'sample-skibidi21.jpg',
-            orgName: '스키비디.jpg',
+            path : `/files/00-sample/sample-skibidi21.jpg`,
+            name : 'sample-skibidi21.jpg',
+            originalname: '스키비디.jpg',
           },
         ],
         content: `
-          <div align="center"><img src="${process.env.API_HOST}/api/files/sample-skibidi22.jpg"></div>
+          <div align="center"><img src="${process.env.API_HOST}/api/files/00-sample/sample-skibidi22.jpg"></div>
           <div align="center"><br></div>
-          <div align="center"><img src="${process.env.API_HOST}/api/files/sample-skibidi23.jpg"></div>
+          <div align="center"><img src="${process.env.API_HOST}/api/files/00-sample/sample-skibidi23.jpg"></div>
           <div align="center"><br></div>
-          <div align="center"><img src="${process.env.API_HOST}/api/files/sample-skibidi24.jpg"></div>`,
+          <div align="center"><img src="${process.env.API_HOST}/api/files/00-sample/sample-skibidi24.jpg"></div>`,
         createdAt: getTime(-10, -60 * 60 * 12),
         updatedAt: getTime(-5, -60 * 60 * 6),
         extra: {
@@ -546,28 +546,28 @@ export const initData = async (nextSeq) => {
         buyQuantity: 298,
         mainImages: [
           {
-            url: `/files/sample-pushpop01.jpg`,
-            fileName: 'sample-pushpop01.jpg',
-            orgName: '푸쉬팝1.jpg',
+            path : `/files/00-sample/sample-pushpop01.jpg`,
+            name : 'sample-pushpop01.jpg',
+            originalname: '푸쉬팝1.jpg',
           },
           {
-            url: `/files/sample-pushpop02.jpg`,
-            fileName: 'sample-pushpop02.jpg',
-            orgName: '푸쉬팝2.jpg',
+            path : `/files/00-sample/sample-pushpop02.jpg`,
+            name : 'sample-pushpop02.jpg',
+            originalname: '푸쉬팝2.jpg',
           },
           {
-            url: `/files/sample-pushpop03.jpg`,
-            fileName: 'sample-pushpop03.jpg',
-            orgName: '푸쉬팝3.jpg',
+            path : `/files/00-sample/sample-pushpop03.jpg`,
+            name : 'sample-pushpop03.jpg',
+            originalname: '푸쉬팝3.jpg',
           },
         ],
         content: `
           <div align="center"><p>푸쉬팝게임기 팝잇 푸시팝 게임기 두더지게임 핑거 뽁뽁이 애니멀을 구매하시는 모든 분께 사은품(무작위)으로 하나 더 드립니다.</p></div>
-          <div align="center"><img src="${process.env.API_HOST}/api/files/sample-pushpop04.gif"></div>
+          <div align="center"><img src="${process.env.API_HOST}/api/files/00-sample/sample-pushpop04.gif"></div>
           <div align="center"><br></div>
-          <div align="center"><img src="${process.env.API_HOST}/api/files/sample-pushpop05.jpg"></div>
+          <div align="center"><img src="${process.env.API_HOST}/api/files/00-sample/sample-pushpop05.jpg"></div>
           <div align="center"><br></div>
-          <div align="center"><img src="${process.env.API_HOST}/api/files/sample-pushpop06.jpg"></div>`,
+          <div align="center"><img src="${process.env.API_HOST}/api/files/00-sample/sample-pushpop06.jpg"></div>`,
         createdAt: getTime(-3, -60 * 60 * 12),
         updatedAt: getTime(-3, -60 * 60 * 12),
         extra: {
@@ -590,9 +590,9 @@ export const initData = async (nextSeq) => {
         buyQuantity: 0,
         mainImages: [
           {
-            url: `/files/sample-pushpop01.jpg`,
-            fileName: 'sample-pushpop01.jpg',
-            orgName: '샤넬.jpg',
+            path: `/files/00-sample/sample-pushpop01.jpg`,
+            name: 'sample-pushpop01.jpg',
+            originalname: '샤넬.jpg',
           },
         ],
         content: `샤넬 향수`,
@@ -615,9 +615,9 @@ export const initData = async (nextSeq) => {
         active: true,
         mainImages: [
           {
-            url: `/files/sample-pushpop03.jpg`,
-            fileName: 'sample-pushpop03.jpg',
-            orgName: '샤넬.jpg',
+            path : `/files/00-sample/sample-pushpop03.jpg`,
+            name : 'sample-pushpop03.jpg',
+            originalname: '샤넬.jpg',
           },
         ],
         content: `3달 쓴 향수입니다.`,
@@ -642,7 +642,11 @@ export const initData = async (nextSeq) => {
             seller_id: 2,
             state: 'OS020',
             name: '헬로카봇 스톰다이버',
-            image: `/files/sample-diver.jpg`,
+            image: {
+              path : `/files/00-sample/sample-diver.jpg`,
+              name : 'sample-diver.jpg',
+              originalname: '헬로카봇.jpg',
+            },
             quantity: 2,
             price: 34520,
             reply_id: 3,
@@ -674,7 +678,11 @@ export const initData = async (nextSeq) => {
             seller_id: 2,
             state: 'OS010',
             name: '레고 클래식 라지 조립 박스 10698',
-            image: `/files/sample-classic.jpg`,
+            image: {
+              path : `/files/00-sample/sample-classic.jpg`,
+              name : 'sample-classic.jpg',
+              originalname: '레고 클래식.jpg',
+            },
             quantity: 1,
             price: 48870,
           },
@@ -683,7 +691,11 @@ export const initData = async (nextSeq) => {
             seller_id: 3,
             state: 'OS010',
             name: '레고 테크닉 42151 부가티 볼리드',
-            image: `/files/sample-bugatti.png`,
+            image: {
+              path : `/files/00-sample/sample-bugatti.png`,
+              name : 'sample-bugatti.png',
+              originalname: '부가티.png',
+            },
             quantity: 2,
             price: 90000,
             reply_id: 2,
@@ -715,7 +727,11 @@ export const initData = async (nextSeq) => {
             seller_id: 3,
             state: 'OS110',
             name: '레고 테크닉 42151 부가티 볼리드',
-            image: `/files/sample-bugatti.png`,
+            image: {
+              path : `/files/00-sample/sample-bugatti.png`,
+              name : 'sample-bugatti.png',
+              originalname: '부가티.png',
+            },
             quantity: 1,
             price: 45000,
             reply_id: 1,
@@ -778,7 +794,11 @@ export const initData = async (nextSeq) => {
             seller_id: 2,
             state: 'OS310',
             name: '헬로카봇 스톰다이버',
-            image: `/files/sample-diver.jpg`,
+            image: {
+              path : `/files/00-sample/sample-diver.jpg`,
+              name : 'sample-diver.jpg',
+              originalname: '헬로카봇.jpg',
+            },
             quantity: 1,
             price: 17260,
             reply_id: 2,

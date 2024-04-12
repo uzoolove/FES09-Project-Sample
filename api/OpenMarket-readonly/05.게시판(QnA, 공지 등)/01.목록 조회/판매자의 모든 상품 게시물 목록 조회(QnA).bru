@@ -5,13 +5,14 @@ meta {
 }
 
 get {
-  url: {{url}}/posts/seller/2?type=qna
+  url: {{url}}/posts/seller/2?type=qna&product_id=2
   body: none
   auth: bearer
 }
 
 query {
   type: qna
+  product_id: 2
 }
 
 auth:bearer {

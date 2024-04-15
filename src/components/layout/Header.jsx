@@ -16,6 +16,13 @@ function Header() {
 
   const [user, setUser] = useRecoilState(memberState);
 
+  let profileImage = user?.profile;
+  if(profileImage && !profileImage.startsWith('http')){
+    // 이미지가 절대 경로로 시작하지 않을 경우 API 서버를 지정
+    profileImage = `${import.meta.env.VITE_API_SERVER}/files/${import.meta.env.VITE_CLIENT_ID}/${profileImage}`;
+  }
+  
+
   return (
     <header className="min-w-80 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 transition-color duration-500 ease-in-out">
       <nav className="flex flex-wrap justify-center items-center p-4 md:flex-nowrap md:justify-between">
@@ -49,7 +56,7 @@ function Header() {
         <div className="w-1/2 order-1 flex justify-end items-center md:order-2 md:w-auto">
           {user ? (
             <p className="flex items-center">
-              <img className="w-8 rounded-full mr-2" src={`${import.meta.env.VITE_API_SERVER}/files/${import.meta.env.VITE_CLIENT_ID}/${user.profile}`}></img>
+              <img className="w-8 rounded-full mr-2" src={ profileImage }></img>
               {user.name}님 :)
               <Button size="sm" onClick={handleLogout}>
                 로그아웃

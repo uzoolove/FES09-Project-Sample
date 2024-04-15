@@ -32,11 +32,12 @@ function Login() {
         name: res.data.item.name,
         profile: res.data.item.profileImage,
         token: res.data.item.token,
+        loginType: res.data.item.loginType,
       });
       alert(res.data.item.name + '님 로그인 되었습니다.');
-      navigate(location.state?.from ? location.state?.from : '/'); // 메인페이지로 이동
+      navigate(location.state?.from || '/'); // 메인페이지로 이동
     } catch (err) {
-      // AxiosError(네트워크 에러-response가 없음, 서버의 4xx, 5xx 응답 상태 코드를 받았을 때-response 있음)
+      // AxiosError(네트워크 에러: response가 없음, 서버의 4xx, 5xx 응답 상태 코드를 받았을 때: response 있음)
       if (err.response?.data.errors) {
         // API 서버가 응답한 에러
         err.response?.data.errors.forEach((error) => setError(error.path, { message: error.msg }));
@@ -44,6 +45,18 @@ function Login() {
         alert(err.response?.data.message);
       }
     }
+  };
+
+  const kakaoLogin = () => {
+    if(!window.Kakao.isInitialized()){
+      window.Kakao.init(import.meta.env.VITE_KAKAO_JS_APP_KEY);
+    }
+    
+    Kakao.Auth.authorize({
+      redirectUri: `${window.location.origin}/users/login/kakao`,
+      scope: 'profile_nickname,profile_image', // 사용자의 동의를 받을 항목
+      state: `from=${location.state?.from || '/'}`, // redirectUri의 state 파라미터로 전달될 값
+    });
   };
 
   return (
@@ -93,9 +106,14 @@ function Login() {
           </div>
           <div className="mt-14 flex justify-center items-center">
             <Submit>로그인</Submit>
-            <Link className="ml-8 text-blue-500 hover:underline" to="/users/signup">
+            <Link className="ml-10 mr-2 text-blue-500 hover:underline" to="/users/signup">
               회원가입
             </Link>
+          </div>
+          <div className="mt-4 flex justify-center items-center">
+            <button type="button" onClick={ kakaoLogin }>
+              <img src="/kakao_login_medium_narrow.png" />
+            </button>
           </div>
         </form>
       </div>

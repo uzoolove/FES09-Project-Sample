@@ -35,7 +35,7 @@ function Signup() {
         });
 
         // 서버로부터 응답받은 이미지 이름을 회원 정보에 포함
-        formData.profileImage = fileRes.data.file.name;
+        formData.profileImage = fileRes.data.item[0].name;
       } else {
         // profileImage 속성을 제거
         delete formData.profileImage;

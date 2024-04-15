@@ -904,28 +904,40 @@ export const initData = async (nextSeq) => {
       {
         _id: await nextSeq('bookmark'),
         user_id: 4,
-        product_id: 2,
+        type: 'product',
+        target_id: 2,
         memo: '첫째 크리스마스 선물.',
         createdAt: getTime(-3, -60 * 60 * 2),
       },
       {
         _id: await nextSeq('bookmark'),
         user_id: 4,
-        product_id: 3,
-        memo: '둘째 입학 선물',
+        type: 'product',
+        target_id: 4,
+        memo: '둘째 생일 선물',
+        createdAt: getTime(-1, -60 * 60 * 12),
+      },
+      {
+        _id: await nextSeq('bookmark'),
+        user_id: 4,
+        type: 'user',
+        target_id: 2,
+        memo: '단골 셀러',
         createdAt: getTime(-2, -60 * 60 * 20),
       },
       {
         _id: await nextSeq('bookmark'),
         user_id: 4,
-        product_id: 4,
-        memo: '이달 보너스타면 꼭!!!',
+        type: 'post',
+        target_id: 1,
+        memo: '크기 문의글 북마크',
         createdAt: getTime(-1, -60 * 60 * 12),
       },
       {
         _id: await nextSeq('bookmark'),
         user_id: 2,
-        product_id: 4,
+        type: 'product',
+        target_id: 4,
         memo: '1순위로 살것!',
         createdAt: getTime(-1, -60 * 60 * 12),
       },
@@ -937,6 +949,7 @@ export const initData = async (nextSeq) => {
         type: 'qna',
         product_id: 1,
         seller_id: 2,
+        views: 5,
         user: {
           _id: 4,
           name: '데이지',
@@ -983,6 +996,7 @@ export const initData = async (nextSeq) => {
         type: 'qna',
         product_id: 1,
         seller_id: 2,
+        views: 50,
         user: {
           _id: 4,
           name: '데이지',
@@ -997,6 +1011,7 @@ export const initData = async (nextSeq) => {
         type: 'qna',
         product_id: 4,
         seller_id: 3,
+        views: 0,
         user: {
           _id: 2,
           name: '네오',
@@ -1009,6 +1024,7 @@ export const initData = async (nextSeq) => {
       {
         _id: await nextSeq('post'),
         type: 'notice',
+        views: 10,
         user: {
           _id: 1,
           name: '무지',
@@ -1021,6 +1037,7 @@ export const initData = async (nextSeq) => {
       {
         _id: await nextSeq('post'),
         type: 'notice',
+        views: 15,
         user: {
           _id: 1,
           name: '무지',

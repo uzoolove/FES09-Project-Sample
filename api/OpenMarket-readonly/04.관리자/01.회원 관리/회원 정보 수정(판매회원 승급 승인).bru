@@ -1,11 +1,11 @@
 meta {
-  name: 회원 정보 수정(판매회원 승인)
+  name: 회원 정보 수정(판매회원 승급 승인)
   type: http
-  seq: 1
+  seq: 2
 }
 
 patch {
-  url: {{url}}/users/3
+  url: {{url}}/users/4
   body: json
   auth: bearer
 }
@@ -16,6 +16,7 @@ auth:bearer {
 
 body:json {
   {
+      "type": "seller",
       "extra.confirm": true
   }
 }

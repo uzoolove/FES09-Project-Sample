@@ -5,6 +5,7 @@ import useCustomAxios from '@hooks/useCustomAxios.mjs';
 import BoardListItem from '@pages/board/BoardListItem';
 import { memberState } from '@recoil/user/atoms.mjs';
 import { useQuery } from '@tanstack/react-query';
+import useModalStore from '@zustand/modalStore.mjs';
 import { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
@@ -12,6 +13,7 @@ import { useRecoilValue } from 'recoil';
 // import { useEffect, useState } from "react";
 
 function BoardList() {
+  const openModal = useModalStore((state) => state.openModal);
   const axios = useCustomAxios();
   // /posts?page=3
   const [searchParams, setSearchParams] = useSearchParams();
@@ -48,8 +50,19 @@ function BoardList() {
   const navigate = useNavigate();
   const handleNewPost = () => {
     if (!user) {
-      const gotoLogin = confirm('로그인 후 이용 가능합니다.\n로그인 페이지로 이동하시겠습니까?');
-      gotoLogin && navigate('/users/login', { state: { from: '/boards/new' } });
+      openModal({ 
+        title: '로그인 알림', 
+        content: '로그인 후 이용 가능합니다.<br/>로그인 페이지로 이동하시겠습니까?', 
+        callbackButton: {
+          '확인': () => {
+            navigate('/users/login', { state: { from: '/boards/new' } });
+          },
+          '취소': ''
+        },  
+      });
+
+      // const gotoLogin = confirm('로그인 후 이용 가능합니다.\n로그인 페이지로 이동하시겠습니까?');
+      // gotoLogin && navigate('/users/login', { state: { from: '/boards/new' } });
     } else {
       navigate(`/boards/new`);
     }

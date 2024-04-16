@@ -1,4 +1,5 @@
 import { memberState } from '@recoil/user/atoms.mjs';
+import useModalStore from '@zustand/modalStore.mjs';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
@@ -9,6 +10,9 @@ const REFRESH_URL = '/auth/refresh';
 function useCustomAxios() {
   const navigate = useNavigate();
   const location = useLocation();
+
+  // 모달
+  const openModal = useModalStore((state) => state.openModal);
 
   // 로그인 된 사용자 정보
   const [user, setUser] = useRecoilState(memberState);
@@ -69,8 +73,20 @@ function useCustomAxios() {
       const { config, response } = err;
       if (response?.status === 401) { // 5. 서버에서 인증 실패 메세지를 보낼 경우
         if (!user || config.url === REFRESH_URL) { // 5-1. 로그인 하지 않았거나 refreshToken 인증 실패일 경우
-          const gotoLogin = confirm('로그인 후 이용 가능합니다.\n로그인 페이지로 이동하시겠습니까?');
-          gotoLogin && navigate('/users/login', { state: { from: location.pathname } });
+          // const gotoLogin = confirm('로그인 후 이용 가능합니다.\n로그인 페이지로 이동하시겠습니까?');
+          // gotoLogin && navigate('/users/login', { state: { from: location.pathname } });
+
+          openModal({ 
+            title: '로그인 알림', 
+            content: '로그인 후 이용 가능합니다.<br/>로그인 페이지로 이동하시겠습니까?', 
+            callbackButton: {
+              '확인': () => {
+                navigate('/users/login', { state: { from: location.pathname } });
+              },
+              '취소': ''
+            },  
+          });
+
         } else { // 6. accessToken 인증 실패일 경우 
           // 7. refresh 토큰으로 access 토큰 재발급 요청
           const accessToken = await getAccessToken(instance);

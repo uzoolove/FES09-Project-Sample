@@ -5,12 +5,12 @@ meta {
 }
 
 get {
-  url: {{url}}/posts/1/replies?page=2&limit=2
+  url: {{url}}/posts/1/replies
   body: none
   auth: none
 }
 
 query {
-  page: 2
-  limit: 2
+  ~page: 2
+  ~limit: 2
 }

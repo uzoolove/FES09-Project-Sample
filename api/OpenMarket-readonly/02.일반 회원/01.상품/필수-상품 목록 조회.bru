@@ -5,7 +5,11 @@ meta {
 }
 
 get {
-  url: {{url}}/products
+  url: {{url}}/products?showSoldOut=true
   body: none
   auth: none
+}
+
+query {
+  showSoldOut: true
 }

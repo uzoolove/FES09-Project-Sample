@@ -29,7 +29,6 @@ function App() {
         </Suspense>
       </RecoilRoot>
       <ReactQueryDevtools initialIsOpen={false} />
-      <Modal />
     </QueryClientProvider>
   );
 }

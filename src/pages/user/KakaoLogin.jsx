@@ -5,8 +5,10 @@ import { useSetRecoilState } from 'recoil';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import Spinner from '@components/Spinner';
+import useModalStore from '@zustand/modalStore.mjs';
 
 function KaKaoLogin() {
+  const openModal = useModalStore((state) => state.openModal);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const authCode = searchParams.get('code');
@@ -31,6 +33,7 @@ function KaKaoLogin() {
         //   phone: '010-1234-5678',
         // },
       });
+
       // 사용자 정보를 recoil에 저장
       setUser({
         _id: res.data.item._id,
@@ -40,14 +43,34 @@ function KaKaoLogin() {
         loginType: res.data.item.loginType,
         kakaoToken: res.data.item.kakaoToken,
       });
-      navigate(parsedState.from ? parsedState?.from : '/', {
-        replace: true, // 뒤로가기 버튼 눌렀을 때 현재 페이지 유지 안함
-      });
+
+      openModal({ 
+        title: '로그인 알림', 
+        content: res.data.item.name + '님 로그인 되었습니다.', 
+        callbackButton: {
+          '확인': () => {
+            navigate(parsedState.from ? parsedState?.from : '/', {
+              replace: true, // 뒤로가기 버튼 눌렀을 때 현재 페이지 유지 안함
+            });
+          },
+        },  
+      });      
+      
+      // navigate(parsedState.from ? parsedState?.from : '/', {
+      //   replace: true, // 뒤로가기 버튼 눌렀을 때 현재 페이지 유지 안함
+      // });
     } catch (err) {
       console.error(err);
       // AxiosError(네트워크 에러: response가 없음, 서버의 4xx, 5xx 응답 상태 코드를 받았을 때-response 있음)
       if (err.response?.data.message) {
-        alert(err.response?.data.message);
+        openModal({ 
+          title: '에러 알림', 
+          content: err.response?.data.message, 
+          callbackButton: {
+            '확인': '',
+          },  
+        });
+        // alert(err.response?.data.message);
       }
     }
   };

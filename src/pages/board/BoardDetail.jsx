@@ -2,11 +2,13 @@ import Button from '@components/Button';
 import useCustomAxios from '@hooks/useCustomAxios.mjs';
 import { memberState } from '@recoil/user/atoms.mjs';
 import { useQuery } from '@tanstack/react-query';
+import useModalStore from '@zustand/modalStore.mjs';
 import { useEffect, useRef } from 'react';
 import { Outlet, useNavigate, useParams } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 
 function BoardDetail() {
+  const openModal = useModalStore((state) => state.openModal);
   const axios = useCustomAxios();
   const navigate = useNavigate();
   const { _id } = useParams();
@@ -44,8 +46,17 @@ function BoardDetail() {
   // 삭제
   const handleDelete = async () => {
     await axios.delete(`/posts/${_id}`);
-    alert('삭제되었습니다.');
-    navigate('/boards');
+    openModal({ 
+      title: '', 
+      content: '삭제되었습니다.', 
+      callbackButton: {
+        '확인': () => {
+          navigate('/boards');
+        },
+      },  
+    });
+    // alert('삭제되었습니다.');
+    // navigate('/boards');
   };
 
   const item = data?.item;

@@ -28,6 +28,7 @@ function KaKaoLogin() {
     try {
       const res = await axios.post('/users/login/kakao', {
         code: authCode,
+        redirect_uri: `${window.location.origin}/users/login/kakao`,
         // user: { // 카카오에서 제공하는 정보 이외에 추가할 회원 정보
         //   type: 'seller',
         //   phone: '010-1234-5678',

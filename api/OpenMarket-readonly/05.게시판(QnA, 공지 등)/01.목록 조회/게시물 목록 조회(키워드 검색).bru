@@ -5,12 +5,14 @@ meta {
 }
 
 get {
-  url: {{url}}/posts?type=qna&keyword=배송
+  url: {{url}}/posts?type=community&keyword=혼자
   body: none
   auth: none
 }
 
 query {
-  type: qna
-  keyword: 배송
+  type: community
+  keyword: 혼자
+  ~keyword: 여행
+  ~type: qna
 }

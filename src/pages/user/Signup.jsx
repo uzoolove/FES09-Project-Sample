@@ -42,15 +42,31 @@ function Signup() {
       }
 
       const res = await axios.post('/users', formData);
-      alert(res.data.item.name + '님 회원가입이 완료 되었습니다.\n로그인 후에 이용하세요.');
-      navigate('/users/login');
+      openModal({ 
+        title: '로그인 알림', 
+        content: res.data.item.name + '님 회원가입이 완료 되었습니다.<br/>로그인 후에 이용하세요.', 
+        callbackButton: {
+          '확인': () => {
+            navigate('/users/login');
+          },
+        },  
+      });
+      // alert(res.data.item.name + '님 회원가입이 완료 되었습니다.\n로그인 후에 이용하세요.');
+      // navigate('/users/login');
     } catch (err) {
       // AxiosError(네트워크 에러-response가 없음, 서버의 4xx, 5xx 응답 상태 코드를 받았을 때-response 있음)
       if (err.response?.data.errors) {
         // API 서버가 응답한 에러
         err.response?.data.errors.forEach((error) => setError(error.path, { message: error.msg }));
       } else if (err.response?.data.message) {
-        alert(err.response?.data.message);
+        openModal({ 
+          title: '에러 알림', 
+          content: err.response?.data.message, 
+          callbackButton: {
+            '확인': '',
+          },
+        });
+        // alert(err.response?.data.message);
       }
     }
   };

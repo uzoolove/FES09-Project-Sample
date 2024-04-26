@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactCsspin } from 'react-csspin';
 import 'react-csspin/dist/style.css';
 import { Suspense } from 'react';
+import Modal from '@components/Modal';
 
 // react-query 사용
 const queryClient = new QueryClient();

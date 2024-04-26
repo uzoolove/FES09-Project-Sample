@@ -4,8 +4,10 @@ import { memberState } from '@recoil/user/atoms.mjs';
 import { useSetRecoilState } from 'recoil';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Submit from '@components/Submit';
+import useModalStore from '@zustand/modalStore.mjs';
 
 function Login() {
+  const openModal = useModalStore((state) => state.openModal);
   const location = useLocation();
   // recoil setter 반환
   const setUser = useSetRecoilState(memberState);
@@ -34,15 +36,31 @@ function Login() {
         token: res.data.item.token,
         loginType: res.data.item.loginType,
       });
-      alert(res.data.item.name + '님 로그인 되었습니다.');
-      navigate(location.state?.from || '/'); // 메인페이지로 이동
+      openModal({ 
+        title: '로그인 알림', 
+        content: res.data.item.name + '님 로그인 되었습니다.', 
+        callbackButton: {
+          '확인': () => {
+            navigate(location.state?.from || '/'); // 메인페이지로 이동
+          },
+        },  
+      });
+      // alert(res.data.item.name + '님 로그인 되었습니다.');
+      // navigate(location.state?.from || '/'); // 메인페이지로 이동
     } catch (err) {
       // AxiosError(네트워크 에러: response가 없음, 서버의 4xx, 5xx 응답 상태 코드를 받았을 때: response 있음)
       if (err.response?.data.errors) {
         // API 서버가 응답한 에러
         err.response?.data.errors.forEach((error) => setError(error.path, { message: error.msg }));
       } else if (err.response?.data.message) {
-        alert(err.response?.data.message);
+        openModal({ 
+          title: '에러 알림', 
+          content: err.response?.data.message, 
+          callbackButton: {
+            '확인': '',
+          },  
+        });
+        // alert(err.response?.data.message);
       }
     }
   };
